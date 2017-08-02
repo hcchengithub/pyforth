@@ -14,7 +14,9 @@ import inspect
 
 
 def word_(name='', imm=False):
-    '''Word decorator for functions'''
+    '''Word decorator for functions
+	   see http://missions5.blogspot.tw/2014/07/python-decorator.html 
+	'''
     def wr(fn, name=name, imm=imm):
         if not name:
             name = fn.__name__
@@ -93,13 +95,13 @@ class Forth:
             self.debugger(self)
             return
 
-        print 'word:    ', self.pc.word.name
-        print 'rs - pc: ', self.rstack, self.pc
-        print '         ', self.pc.word.code
-        print 'cur i:   ', self.pc.this()
-        print 'stack:   ', self.stack
-        print 'interpret', self.dct.get('forth_interpret', False)
-        print
+        print('word:    ', self.pc.word.name)
+        print('rs - pc: ', self.rstack, self.pc)
+        print('         ', self.pc.word.code)
+        print('cur i:   ', self.pc.this())
+        print('stack:   ', self.stack)
+        print('interpret', self.dct.get('forth_interpret', False))
+        print()
 
     def _str_to_bool(self, ws):
         'Returns a boolean given a string or RuntimeError'
@@ -596,4 +598,4 @@ interpret = Word('interpret',
 init = Word('init', [interpret, exit])
 
 if __name__ == '__main__':
-    forth = Forth(debug=False)
+    forth = Forth(debug=True)
