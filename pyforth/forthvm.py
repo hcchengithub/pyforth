@@ -15,7 +15,9 @@ import inspect
 
 def word_(name='', imm=False):
     '''Word decorator for functions
-	   see http://missions5.blogspot.tw/2014/07/python-decorator.html 
+	   see http://missions5.blogspot.tw/2014/07/python-decorator.html
+           知乎 https://zhuanlan.zhihu.com/p/24580660
+       我看是用來把後續的 function 變成 Word 
 	'''
     def wr(fn, name=name, imm=imm):
         if not name:
